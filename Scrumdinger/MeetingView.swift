@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MeetingView: View {
+    var scrum = DailyScrum.sampleData[0]
     var body: some View {
         VStack {
             ProgressView(value: 5, total: 15)
@@ -28,9 +29,10 @@ struct MeetingView: View {
             .accessibilityLabel("Time remaining")
             .accessibilityValue("10 minutes")
             Circle()
-                            .strokeBorder(lineWidth: 24)
+                .strokeBorder(lineWidth: 24)
             HStack {
                 Text("Speaker 1 of 3")
+                    .foregroundColor(scrum.theme.mainColor)
                 Spacer()
                 Button(action: {}) {
                     Image(systemName: "forward.fill")
